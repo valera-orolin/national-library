@@ -1,0 +1,966 @@
+@media (orientation: landscape) {
+
+    body {
+        color: #2c3021;
+        background-color: #8c996e;
+        margin: 0;
+    }
+
+    header {
+        height: 20vh;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    h1 {
+        font-size: 4.5vh;
+    }
+
+    h2 {
+        font-size: 3vh;
+    }
+
+    h3 {
+        font-size: 2.5vh;
+    }
+
+    h4 {
+        font-size: 2vh;
+    }
+
+    p {
+        font-size: 2.5vh;
+    }
+
+    .sb-line {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .nav-links-line {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .sb-line-top {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    .sb-line-left {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    .line-right {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+
+    .c-line {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .container {
+        margin: 0 10vw;
+    }
+
+    .lighter-text {
+        font-weight: 500;
+    }
+
+    .margin-top-3 {
+        margin-top: 3vh;
+    }
+
+    hr {
+        border: none;
+        border-top: 0.1vh solid #2c3021;
+    }
+
+    .white-line {
+        border-top: 0.1vh solid #c9c4c0;
+    }
+
+    /* Header */
+
+    .logo-img {
+        max-width: 15vh;
+    }
+
+    .nav-links a {
+        padding: 0 2vw;
+    }
+
+    .lib-img {
+        display: flex;
+        align-items: center;
+        height: 80vh;
+        overflow: hidden;
+    }
+
+    .lib-img img {
+        width: 100%;
+    }
+
+    /* Books section */
+
+    .books-section {
+        padding: 10vh 0;
+        width: 100%;
+        background-color: #c9c4c0;
+    }
+
+    .book-card {
+        width: 18vw;
+        overflow: hidden;
+    }
+
+    .book-card img {
+        height: 50vh;
+    }
+
+    /* Quote */
+
+    .quote {
+        padding: 6vh 0;
+        background-color: #c9c4c0;
+        overflow: hidden;
+    }
+
+    .quote p {
+        margin: 0;
+        font-size: 15vh;
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke-width: 0.1vh;
+        -webkit-text-stroke-color: #2c3021;
+    }
+
+    .marquee {
+        display: inline-block;
+        white-space: nowrap;
+        animation: marquee 20s linear infinite;
+    }
+
+    @keyframes marquee {
+        from {
+            transform: translateX(100%);
+        }
+
+        to {
+            transform: translateX(-100%);
+        }
+    }
+
+    /* Events section */
+
+    .events-section {
+        padding: 10vh 0;
+        width: 100%;
+        background-color: #2c3021;
+        color: #c9c4c0;
+    }
+
+    .event-card {
+        width: 60vw;
+        overflow: hidden;
+    }
+
+    .small-margin {
+        margin: 1.5vh 0;
+    }
+
+    .date-or-place::before {
+        content: "";
+        display: inline-block;
+        width: 1vh;
+        height: 1vh;
+        border-radius: 50%;
+        background-color: #a76714;
+        margin-right: 1vh;
+        margin-bottom: .2vh;
+    }
+
+    .event-card-img {
+        width: 100%;
+        height: 30vh;
+    }
+
+    .event-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .sb-line-left h3+h3 {
+        margin-left: 3vh;
+    }
+
+    .small-event-cards {
+        width: 100%;
+        margin-left: 10vw;
+    }
+
+    /* Posts section */
+
+    .posts-section {
+        padding: 10vh 0;
+        width: 100%;
+        background-color: #c9c4c0;
+    }
+
+    .post-card {
+        width: 35vw;
+        overflow: hidden;
+    }
+
+    .post-card-img {
+        width: 100%;
+        height: 35vh;
+    }
+
+    .post-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Footer */
+
+    .footer {
+        padding: 10vh 0;
+        width: 100%;
+        background-color: #8c996e;
+    }
+
+    .input-text {
+        background-color: transparent;
+        color: #2c3021;
+        border: none;
+        border-bottom: .1vh solid #2c3021;
+        font-size: 3vh;
+        font-family: inherit;
+        margin-left: 3vh;
+        padding: 1vh;
+    }
+
+    .input-text::placeholder {
+        color: #5f654e;
+    }
+
+    .footer .input-button {
+        margin-left: 3vh;
+    }
+
+    .input-button {
+        background-color: transparent;
+        color: #2c3021;
+        border: none;
+        font-size: 3vh;
+        font-family: inherit;
+        padding: 1.5vh 5vh;
+        border: .1vh solid #2c3021;
+        border-top-left-radius: 3vh;
+        border-bottom-right-radius: 3vh;
+        cursor: pointer;
+    }
+
+    .author {
+        font-weight: lighter;
+        color: #5f654e;
+    }
+
+    .icons {
+        width: 8vw;
+    }
+
+    .footer i {
+        font-size: 3vh;
+    }
+
+    /* Books page */
+
+    .page-container {
+        background-color: #c9c4c0;
+    }
+
+    .filter-form {
+        padding: 6vh 6vh 0 6vh;
+    }
+
+    .filter-form > * {
+        margin: 1.5vh;
+    }
+
+    .new-publication-link {
+        padding-right: 7.5vh;
+    }
+
+    .elements-list {
+        padding: 6vh;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .superlong-text {
+        width: 30vw;
+    }
+
+    .page-container .book-card {
+        margin: 1.5vh;
+        width: 13vw;
+        overflow: hidden;
+    }
+
+    .page-container .book-card img {
+        height: 35vh;
+    }
+
+    .page-container h3,
+    .page-container h4 {
+        margin: 1.5vh 0;
+    }
+
+    .rating-text::before {
+        content: "\f005";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        color: #d49e09;
+        margin-right: 1vh;
+    }
+
+    .margin-left-3vh {
+        margin-left: 3vh;
+    }
+
+    /* Events and posts page */
+
+    .page-container .post-card {
+        margin-top: 5vh;
+    }
+
+    /* Login page */
+
+    .login-container {
+        width: 100%;
+        text-align: center;
+        background-color: #c9c4c0;
+    }
+
+    .login-panel {
+        width: 28vw;
+        display: inline-block;
+        background-color: #8c996e;
+        margin: 15vh;
+    }
+
+    .login-form > * {
+        margin: 2vh;
+    }
+
+    .white-link {
+        color: #5f654e;
+    }
+
+    /* Book page */
+
+    .book-page {
+        padding: 10vh;
+        background-color: #c9c4c0;
+    }
+
+    .book-page img {
+        height: 60vh;
+    }
+
+    .book-text-info {
+        margin-left: 10vh;
+    }
+
+    .rating-form input[type="radio"] {
+        display: none;
+    }
+
+    .rating-form label i {
+        font-size: 3vh;
+        color: #ddd;
+        cursor: pointer;
+    }
+
+    .rating-form .input-button {
+        margin-left: 3vh;
+    }
+
+    .rating-form label i.active {
+        color: #d49e09;
+    }
+
+    .button-link {
+        background-color: transparent;
+        border: none;
+        font-size: 3vh;
+        font-family: inherit;
+        margin-left: 3vh;
+        cursor: pointer;
+    }
+
+    .edit-delete-line {
+        display: flex;
+        align-items: center;
+    }
+
+    .edit-delete-line form {
+        display: flex;
+        align-items: center;
+    }
+
+    /* Event and post page */
+
+    .post-page {
+        padding: 10vh;
+        background-color: #c9c4c0;
+    }
+
+    .post-page .post-card {
+        width: 100%;
+    }
+
+    .post-page .post-card-img {
+        height: 50vh;
+    }
+
+    /* Edit book page */
+
+    .book-text-info input {
+        margin-left: 0;
+    }
+
+    .text-edit {
+        margin-top: 3vh;
+        width: 100%;
+        box-sizing: border-box;
+        background-color: transparent;
+        resize: vertical;
+        font-family: inherit;
+        color: #2c3021;
+        font-size: 3vh;
+    }
+
+    .checkbox {
+        height: 3vh;
+        width: 3vh;
+    }
+
+    /* Edit event and post pages */
+
+    .post-edit-page input {
+        margin-left: 0;
+    }
+}
+
+/******************************************************************************/
+
+@media (orientation: portrait) {
+
+    body {
+        color: #2c3021;
+        background-color: #8c996e;
+        margin: 0;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    h1 {
+        font-size: 4.5vw;
+    }
+
+    h2 {
+        font-size: 3vw;
+    }
+
+    h3 {
+        font-size: 2.5vw;
+    }
+
+    h4 {
+        font-size: 2vw;
+    }
+
+    p {
+        font-size: 2.5vw;
+    }
+
+    .sb-line {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .nav-links-line a {
+        display: block;
+    }
+
+    .sb-line-top {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    .sb-line-left {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    .line-right {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+
+    .c-line {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .container {
+        margin: 0 5vw;
+    }
+
+    .lighter-text {
+        font-weight: 500;
+    }
+
+    .margin-top-3 {
+        margin-top: 3vw;
+    }
+
+    hr {
+        border: none;
+        border-top: 0.1vw solid #2c3021;
+    }
+
+    .white-line {
+        border-top: 0.1vw solid #c9c4c0;
+    }
+
+    /* Header */
+
+    .logo-img {
+        max-width: 15vw;
+    }
+
+    .nav-links a {
+        padding: 0;
+    }
+
+    .lib-img {
+        display: inline-block;
+    }
+
+    .lib-img img {
+        display: block;
+        width: 100%;
+        height: auto;
+        padding: 1vh 0;
+    }
+
+    /* Books section */
+
+    .books-section {
+        padding: 10vw 0;
+        width: 100%;
+        background-color: #c9c4c0;
+    }
+
+    .book-card {
+        width: 38vw;
+        overflow: hidden;
+    }
+
+    .book-card img {
+        height: 55vw;
+    }
+
+    .books-section .sb-line-top {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    /* Quote */
+
+    .quote {
+        padding: 6vw 0;
+        background-color: #c9c4c0;
+        font-size: 15vw;
+        overflow: hidden;
+    }
+
+    .quote p {
+        font-size: 15vw;
+    }
+
+    .quote p {
+        margin: 0;
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke-width: 0.1vw;
+        -webkit-text-stroke-color: #2c3021;
+    }
+
+    .marquee {
+        display: inline-block;
+        white-space: nowrap;
+        animation: marquee 15s linear infinite;
+    }
+
+    @keyframes marquee {
+        from {
+            transform: translateX(100%);
+        }
+
+        to {
+            transform: translateX(-100%);
+        }
+    }
+
+    /* Events section */
+
+    .events-section {
+        padding: 10vw 0;
+        width: 100%;
+        background-color: #2c3021;
+        color: #c9c4c0;
+    }
+
+    .event-card {
+        width: 45vh;
+        overflow: hidden;
+    }
+
+    .small-margin {
+        margin: 1vw 0;
+    }
+
+    .date-or-place::before {
+        content: "";
+        display: inline-block;
+        width: 1vw;
+        height: 1vw;
+        border-radius: 50%;
+        background-color: #a76714;
+        margin-right: 1vw;
+        margin-bottom: .2vw;
+    }
+
+    .event-card-img {
+        width: 100%;
+        height: 25vw;
+    }
+
+    .event-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .sb-line-left h3+h3 {
+        margin-left: 3vw;
+    }
+
+    .small-event-cards {
+        width: 100%;
+        margin-left: 5vw;
+    }
+
+    /* Posts section */
+
+    .posts-section {
+        padding: 10vw 0;
+        width: 100%;
+        background-color: #c9c4c0;
+    }
+
+    .posts-section .post-card {
+        width: 43vw;
+        overflow: hidden;
+    }
+
+    .posts-section h2,
+    .posts-section h3,
+    .posts-section p {
+        margin: 1.5vw 0;
+    }
+
+    .post-card-img {
+        width: 100%;
+        height: 25vw;
+    }
+
+    .post-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Footer */
+
+    .footer {
+        padding: 5vw 0;
+        width: 100%;
+        background-color: #8c996e;
+    }
+
+    .input-text {
+        background-color: transparent;
+        color: #2c3021;
+        border: none;
+        border-bottom: .1vw solid #2c3021;
+        font-size: 3vw;
+        font-family: inherit;
+        padding: 1vw;
+    }
+
+    .input-text::placeholder {
+        color: #5f654e;
+    }
+
+    .input-button {
+        margin: 3vw 0;
+        background-color: transparent;
+        color: #2c3021;
+        border: none;
+        font-size: 3vw;
+        font-family: inherit;
+        padding: 1.5vw 5vw;
+        border: .1vw solid #2c3021;
+        border-top-left-radius: 3vw;
+        border-bottom-right-radius: 3vw;
+        cursor: pointer;
+    }
+
+    .newsletter-line .sb-line {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .author {
+        font-weight: lighter;
+        color: #5f654e;
+    }
+
+    .icons {
+        width: 8vh;
+    }
+
+    .footer i {
+        font-size: 3vw;
+    }
+
+    /* Books page */
+
+    .page-container {
+        background-color: #c9c4c0;
+    }
+
+    .filter-form {
+        padding: 6vw 6vw 0 6vw;
+    }
+
+    .filter-form > * {
+        margin: 1.5vw;
+    }
+
+    .new-publication-link {
+        padding-right: 7.5vw;
+    }
+
+    .elements-list {
+        padding: 6vw;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .superlong-text {
+        width: 30vh;
+    }
+
+    .page-container .book-card {
+        margin: 1.5vw;
+        width: 23vw;
+        overflow: hidden;
+    }
+
+    .page-container .book-card img {
+        height: 35vw;
+    }
+
+    .page-container h3,
+    .page-container h4 {
+        margin: 1.5vw 0;
+    }
+
+    .rating-text::before {
+        content: "\f005";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        color: #d49e09;
+        margin-right: 1vw;
+    }
+
+    .margin-left-3vh {
+        margin-left: 3vw;
+    }
+
+    /* Events and posts page */
+
+    .page-container .post-card {
+        margin-top: 5vw;
+    }
+
+    .page-container .post-card {
+        width: 38vw;
+        overflow: hidden;
+    }
+
+    /* Login page */
+
+    .login-container {
+        width: 100%;
+        text-align: center;
+        background-color: #c9c4c0;
+    }
+
+    .login-panel {
+        width: 60vw;
+        display: inline-block;
+        background-color: #8c996e;
+        margin: 20vh 0;
+    }
+
+    .login-form > * {
+        margin: 2vw;
+    }
+
+    .white-link {
+        color: #5f654e;
+    }
+
+    /* Book page */
+
+    .book-page {
+        padding: 10vw;
+        background-color: #c9c4c0;
+    }
+
+    .book-page .sb-line-left {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .book-page img {
+        height: 60vw;
+    }
+
+    .rating-form .input-button {
+        margin-left: 3vw;
+    }
+
+    .rating-form input[type="radio"] {
+        display: none;
+    }
+
+    .rating-form label i {
+        font-size: 3vw;
+        color: #ddd;
+        cursor: pointer;
+    }
+
+    .rating-form label i.active {
+        color: #d49e09;
+    }
+
+    .button-link {
+        background-color: transparent;
+        border: none;
+        font-size: 3vw;
+        font-family: inherit;
+        margin-left: 3vw;
+        cursor: pointer;
+    }
+
+    .edit-delete-line {
+        display: flex;
+        align-items: center;
+    }
+
+    .edit-delete-line form {
+        display: flex;
+        align-items: center;
+    }
+
+    /* Event and post page */
+
+    .post-page {
+        padding: 10vw;
+        background-color: #c9c4c0;
+    }
+
+    .post-page .post-card {
+        width: 100%;
+    }
+
+    .post-page .post-card-img {
+        height: 40vw;
+    }
+
+    /* Edit book page */
+
+    .book-text-info input {
+        margin-left: 0;
+    }
+
+    .text-edit {
+        margin-top: 3vw;
+        width: 100%;
+        box-sizing: border-box;
+        background-color: transparent;
+        resize: vertical;
+        font-family: inherit;
+        color: #2c3021;
+        font-size: 3vw;
+    }
+
+    .checkbox {
+        height: 3vw;
+        width: 3vw;
+    }
+
+    /* Edit event and post pages */
+
+    .post-edit-page input {
+        margin-left: 0;
+    }
+}
