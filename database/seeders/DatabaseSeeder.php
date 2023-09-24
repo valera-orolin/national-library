@@ -18,9 +18,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        Book::factory(10)->create();
+        Book::factory(20)->create();
 
         Event::factory(10)->create();
+
+        Post::factory(10)->create();
 
         $adminRole = Role::firstOrCreate(['name' => 'admin']);
         $admin = User::create([
@@ -29,7 +31,5 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('password'),
         ]);
         $admin->roles()->attach($adminRole);
-
-        Post::factory(6)->create();
     }
 }

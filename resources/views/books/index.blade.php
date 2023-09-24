@@ -9,6 +9,10 @@
                 <h2 class="lighter-text margin-left-3vh">to</h2>
                 <input class="input-text" type="date" name="date_to">
             </div>
+            <div class="c-line margin-left-3vh">
+                <h2 class="lighter-text">Only if available for borrowing</h2>
+                <input class="checkbox margin-left-3vh" type="checkbox" name="is_available">
+            </div>
             <div class="c-line">
                 <h2 class="lighter-text">Sort by</h2>
                 <select class="input-text">
@@ -18,14 +22,19 @@
             </div>
             <input class="input-button" type="submit" value="Search">
         </form>
-        <div class="line-right">
-            <a class="new-publication-link" href="/books/create"><h2 class="lighter-text">New Book</h2></a>
-        </div>
+
+        @if (auth()->check() && auth()->user()->isAdmin())
+            <div class="line-right">
+                <a class="new-publication-link" href="/books/create"><h2 class="lighter-text">New Book</h2></a>
+            </div>
+        @endif
     
         <div class="elements-list">
             @foreach ($books as $book)
                 <x-book-multiple-card :book="$book"/>   
             @endforeach
         </div>
+
+        {{ $books->links() }}
     </div>
 </x-layout>

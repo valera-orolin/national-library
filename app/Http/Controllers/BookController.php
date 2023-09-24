@@ -8,6 +8,12 @@ use Illuminate\Http\Request;
 
 class BookController extends Controller
 {
+    /**
+     * Display a listing of the books.
+     *
+     * @param  Request  $request
+     * @return \Illuminate\View\View
+     */
     public function index(Request $request)
     {
         return view('books.index', [
@@ -15,6 +21,12 @@ class BookController extends Controller
         ]);
     }
 
+    /**
+     * Display the specified book.
+     *
+     * @param  Book  $book
+     * @return \Illuminate\View\View
+     */
     public function show(Book $book)
     {
         return view('books.show', [
@@ -22,11 +34,22 @@ class BookController extends Controller
         ]);
     }
 
+    /**
+     * Show the form for creating a new book.
+     *
+     * @return \Illuminate\View\View
+     */
     public function create()
     {
         return view('books.create');
     }
 
+    /**
+     * Store a newly created book in storage.
+     *
+     * @param  Request  $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function store(Request $request)
     {
         $formFields = $request->validate([
@@ -45,6 +68,12 @@ class BookController extends Controller
         return redirect('/books');
     }
 
+    /**
+     * Show the form for editing the specified book.
+     *
+     * @param  Book  $book
+     * @return \Illuminate\View\View
+     */
     public function edit(Book $book)
     {
         return view('books.edit', [
@@ -52,6 +81,13 @@ class BookController extends Controller
         ]);
     }
 
+    /**
+     * Update the specified book in storage.
+     *
+     * @param  Request  $request
+     * @param  Book  $book
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function update(Request $request, Book $book) 
     {
         $formFields = $request->validate([
@@ -70,6 +106,12 @@ class BookController extends Controller
         return back();
     }
 
+    /**
+     * Remove the specified book from storage.
+     *
+     * @param  Book  $book
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function destroy(Book $book)
     {
         $book->delete();

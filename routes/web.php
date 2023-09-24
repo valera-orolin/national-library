@@ -34,19 +34,39 @@ Route::get('/', function () {
     return view('index');
 });
 
-
+/**
+ * Display a listing of the books.
+ */
 Route::get('/books', [BookController::class, 'index']);
 
-Route::get('/books/create', [BookController::class, 'create']);
+/**
+ * Show the form for creating a new book.
+ */
+Route::get('/books/create', [BookController::class, 'create'])->middleware('admin');
 
-Route::post('/books', [BookController::class, 'store']);
+/**
+ * Store a newly created book in storage.
+ */
+Route::post('/books', [BookController::class, 'store'])->middleware('admin');
 
-Route::get('/books/{book}/edit', [BookController::class, 'edit']);
+/**
+ * Show the form for editing the specified book.
+ */
+Route::get('/books/{book}/edit', [BookController::class, 'edit'])->middleware('admin');
 
-Route::put('/books/{book}', [BookController::class, 'update']);
+/**
+ * Update the specified book in storage.
+ */
+Route::put('/books/{book}', [BookController::class, 'update'])->middleware('admin');
 
-Route::delete('/books/{book}', [BookController::class, 'destroy']);
+/**
+ * Remove the specified book from storage.
+ */
+Route::delete('/books/{book}', [BookController::class, 'destroy'])->middleware('admin');
 
+/**
+ * Display the specified book.
+ */
 Route::get('/books/{book}', [BookController::class, 'show']);
 
 

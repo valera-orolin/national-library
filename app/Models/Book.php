@@ -50,6 +50,10 @@ class Book extends Model
                 ->orWhere('description', 'like', '%' . $filters['search_text'] . '%');
         }
 
+        if (isset($filters['is_available'])) {
+            $query->where('is_available', true);
+        }
+
         if (($filters['date_from'] ?? false) || ($filters['date_to'] ?? false)) {
             $from = $filters['date_from'] ?? "2000-01-01";
             $to = $filters['date_to'] ?? date("Y-m-d");

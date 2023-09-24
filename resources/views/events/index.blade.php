@@ -22,5 +22,7 @@
                 <x-event-multiple-card :event="$event" />
             @endforeach
         </div>
+
+        {{ $events->links() }}
     </div>
 </x-layout>

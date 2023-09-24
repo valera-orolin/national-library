@@ -15,8 +15,8 @@
                     <h3 class="lighter-text margin-top-3">Genre:</h3>
                     <input class="input-text superlong-text" type="text" name="genres" value="{{ $book->genres }}">
 
-                    <h3 class="lighter-text margin-top-3">Release date:</h3>
-                    <input class="input-text superlong-text" type="date" name="release_date" value="{{ $book->release_date }}">
+                    <h3 class="lighter-text margin-top-3">First published:</h3>
+                    <input class="input-text superlong-text" type="date" name="release_date" value="{{ $book->release_date->format('Y-m-d') }}">
     
                     <h2 class="rating-text lighter-text margin-top-3">5 (86)</h2>
     
