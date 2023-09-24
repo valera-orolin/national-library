@@ -32,4 +32,28 @@ class Book extends Model
     protected $casts = [
         'release_date' => 'date',
     ];
+
+    /**
+     * Apply the given filters to the query.
+     *
+     * @param   \Illuminate\Database\Eloquent\Builder  $query
+     * @param   array  $filters
+     * @return  void
+     */
+    public function scopeFilter($query, array $filters)
+    {
+        if ($filters['search_text'] ?? false) {
+            $query->where('title', 'like', '%' . $filters['search_text'] . '%')
+                ->orWhere('authors', 'like', '%' . $filters['search_text'] . '%')
+                ->orWhere('genres', 'like', '%' . $filters['search_text'] . '%')
+                ->orWhere('authors', 'like', '%' . $filters['search_text'] . '%')
+                ->orWhere('description', 'like', '%' . $filters['search_text'] . '%');
+        }
+
+        if (($filters['date_from'] ?? false) || ($filters['date_to'] ?? false)) {
+            $from = $filters['date_from'] ?? "2000-01-01";
+            $to = $filters['date_to'] ?? date("Y-m-d");
+            $query->whereBetween('release_date', [$from, $to]);
+        }
+    }
 }

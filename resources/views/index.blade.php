@@ -6,7 +6,7 @@
     <div class="container">
         <div class="sb-line">
             <h1>Reading Spotlight</h1>
-            <a href="books.html"><h2>SEE ALL BOOKS</h2></a>
+            <a href="/books"><h2>SEE ALL BOOKS</h2></a>
         </div>
         <div class="sb-line-top margin-top-3">
             <div class="book-card">

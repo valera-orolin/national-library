@@ -17,7 +17,7 @@
         </div>
         <nav class="nav-links nav-links-line">
             <a href="about.html"><h2>About</h2></a>
-            <a href="books.html"><h2>Books</h2></a>
+            <a href="/books"><h2>Books</h2></a>
             <a href="/events"><h2>Events</h2></a>
             <a href="/posts"><h2>Blog</h2></a>
         </nav>

@@ -1,10 +1,12 @@
 <?php
 
+use App\Http\Controllers\BookController;
 use App\Http\Controllers\EventController;
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
+use App\Models\Book;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +33,21 @@ use App\Http\Controllers\UserController;
 Route::get('/', function () {
     return view('index');
 });
+
+
+Route::get('/books', [BookController::class, 'index']);
+
+Route::get('/books/create', [BookController::class, 'create']);
+
+Route::post('/books', [BookController::class, 'store']);
+
+Route::get('/books/{book}/edit', [BookController::class, 'edit']);
+
+Route::put('/books/{book}', [BookController::class, 'update']);
+
+Route::delete('/books/{book}', [BookController::class, 'destroy']);
+
+Route::get('/books/{book}', [BookController::class, 'show']);
 
 
 /**
