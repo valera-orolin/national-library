@@ -27,3 +27,5 @@
         {{--{{ $posts->links('components/pagination') }}--}}
     </div>
 </x-layout>
+
+<script src="js/text-trimmer.js"></script>

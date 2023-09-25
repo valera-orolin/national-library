@@ -62,6 +62,8 @@ class PostController extends Controller
         }
 
         Post::create($formFields);
+
+        flash('Post has been created.');
         
         return redirect('/posts');
     }
@@ -99,6 +101,8 @@ class PostController extends Controller
         }
 
         $post->update($formFields);
+
+        flash('Post has been updated.');
         
         return back();
     }
@@ -112,6 +116,7 @@ class PostController extends Controller
     public function destroy(Post $post) 
     {
         $post->delete();
+        flash('Post has been deleted.');
         return redirect('/posts');
     }
 }

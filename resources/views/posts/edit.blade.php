@@ -9,14 +9,23 @@
                 </div>
                 <h3 class="lighter-text">Title:</h3>
                 <input class="input-text superlong-text" type="text" name="title" value="{{ $post->title }}">
+                @error('title')
+                    <h3 class="lighter-text margin-1" style="color: #a23526;">{{ $message }}</h3>
+                @enderror
     
                 <h3 class="lighter-text margin-top-3">Category:</h3>
                 <input class="input-text superlong-text" type="text" name="categories" value="{{ $post->categories }}">
+                @error('categories')
+                    <h3 class="lighter-text margin-1" style="color: #a23526;">{{ $message }}</h3>
+                @enderror
 
                 <h3 class="lighter-text margin-top-3">Image:</h3>
                 <input class="input-button" type="file" name="image" tex>
     
                 <textarea class="text-edit margin-top-3" name="text" cols="30" rows="10">{{ $post->text }}</textarea>
+                @error('text')
+                    <h3 class="lighter-text margin-1" style="color: #a23526;">{{ $message }}</h3>
+                @enderror
             </div>
             <input class="input-button margin-top-3" type="submit" value="Submit">
         </form>

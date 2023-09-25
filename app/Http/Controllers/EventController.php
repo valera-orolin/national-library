@@ -63,6 +63,8 @@ class EventController extends Controller
         }
 
         Event::create($formFields);
+        
+        flash('Event has been created.');
 
         return redirect('/events');
     }
@@ -102,6 +104,8 @@ class EventController extends Controller
 
         $event->update($formFields);
 
+        flash('Event has been updated.');
+
         return back();
     }
 
@@ -114,6 +118,7 @@ class EventController extends Controller
     public function destroy(Event $event)
     {
         $event->delete();
+        flash('Event has been deleted.');
         return redirect('/events');
     }
 }

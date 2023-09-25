@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+<script src="//code.jquery.com/jquery.js"></script>
     <title>Library</title>
 </head>
 <body>
@@ -36,6 +37,14 @@
         </div>
     </header>
 
+    <div class="container message-container">
+        @include('flash::message')
+    </div>
+
+    <script>
+        $('div.alert').not('.alert-important').delay(3000).fadeOut(350);
+    </script>
+
     {{ $slot }}
 
     <div class="footer">
@@ -61,8 +70,6 @@
             </div>
         </div>
     </div>
-
-    <script src="js/text-trimmer.js"></script>
 
 </body>
 </html>

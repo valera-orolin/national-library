@@ -2,11 +2,10 @@
 
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\EventController;
-use App\Models\Post;
+use App\Http\Controllers\HomepageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
-use App\Models\Book;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,9 +29,8 @@ use App\Models\Book;
 /**
  * Home page
  */
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [HomepageController::class, 'index']);
+
 
 /**
  * Display a listing of the books.

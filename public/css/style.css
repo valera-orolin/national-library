@@ -83,6 +83,19 @@
         margin-top: 3vh;
     }
 
+    .margin-top-2 {
+        margin-top: 2vh;
+    }
+
+    .margin-1 {
+        margin: 1vh;
+        margin-bottom: 0;
+    }
+
+    .margin-0 {
+        margin: 0;
+    }
+
     hr {
         border: none;
         border-top: 0.1vh solid #2c3021;
@@ -94,6 +107,16 @@
 
     .bolder-text {
         font-weight: bold;
+    }
+
+    .message-container {
+        text-align: center;
+        background-color: #8c996e;
+    }
+
+    .message-container > * {
+        padding: 3vh 0;
+        font-size: 3vh;
     }
 
     /* Header */
@@ -212,7 +235,11 @@
         object-fit: cover;
     }
 
-    .sb-line-left h3+h3 {
+    .events-section .sb-line-left h3+h3 {
+        margin-left: 3vh;
+    }
+
+    .post-card .sb-line-left h3+h3 {
         margin-left: 3vh;
     }
 
@@ -260,8 +287,11 @@
         border-bottom: .1vh solid #2c3021;
         font-size: 3vh;
         font-family: inherit;
-        margin-left: 3vh;
         padding: 1vh;
+    }
+
+    .footer .input-text {
+        margin-left: 3vh;
     }
 
     .input-text::placeholder {
@@ -376,9 +406,11 @@
         margin: 15vh;
     }
 
+    /*
     .login-form > * {
-        margin: 2vh;
+        margin: 0 2vh;
     }
+    */
 
     .white-link {
         color: #5f654e;
@@ -579,6 +611,19 @@
         margin-top: 3vw;
     }
 
+    .margin-top-2 {
+        margin-top: 2vw;
+    }
+
+    .margin-1 {
+        margin: 1vw;
+        margin-bottom: 0;
+    }
+
+    .margin-0 {
+        margin: 0;
+    }
+
     hr {
         border: none;
         border-top: 0.1vw solid #2c3021;
@@ -586,6 +631,16 @@
 
     .white-line {
         border-top: 0.1vw solid #c9c4c0;
+    }
+
+    .message-container {
+        text-align: center;
+        background-color: #8c996e;
+    }
+
+    .message-container > * {
+        padding: 3vw 0;
+        font-size: 3vw;
     }
 
     /* Header */
@@ -887,15 +942,17 @@
     }
 
     .login-panel {
-        width: 60vw;
+        width: 58vw;
         display: inline-block;
         background-color: #8c996e;
         margin: 20vh 0;
     }
 
+    /*
     .login-form > * {
         margin: 2vw;
     }
+    */
 
     .white-link {
         color: #5f654e;

@@ -43,6 +43,8 @@ class UserController extends Controller
 
         auth()->login($user);
 
+        flash('User has been created and logged in.');
+
         return redirect('/');
     }
 
@@ -69,6 +71,8 @@ class UserController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
+        flash('User has been logged out.');
+
         return back();
     }
 
@@ -86,7 +90,11 @@ class UserController extends Controller
         ]);
 
         if (auth()->attempt($formFields)) {
+            
             $request->session()->regenerate();
+
+            flash('User has been logged in');
+
             return redirect('/');
         }
 

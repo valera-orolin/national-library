@@ -26,3 +26,5 @@
         {{ $events->links() }}
     </div>
 </x-layout>
+
+<script src="js/text-trimmer.js"></script>

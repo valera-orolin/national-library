@@ -7,7 +7,7 @@
             <h1 class="lighter-text">{{ $book->title }}</h1>
             <h2 class="lighter-text">{{ $book->authors }}</h2>
             <h2 class="lighter-text">{{ $book->genres }}</h2>
-            <h2 class="lighter-text">First published {{ date_format($book->release_date, 'F d, Y') }}</h2>
+            <h2 class="lighter-text">First published on {{ date_format($book->release_date, 'F d, Y') }}</h2>
             <h2 class="rating-text lighter-text">5 (86)</h2>
             
             @if (auth()->check() && !auth()->user()->isAdmin())

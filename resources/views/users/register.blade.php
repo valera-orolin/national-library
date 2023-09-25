@@ -5,10 +5,26 @@
             <form class="login-form" method="POST" action="/users">
                 @csrf
                 <input class="input-text" type="text" name="name" placeholder="Name" value="{{ old('name') }}">
-                <input class="input-text" type="email" name="email" placeholder="Email" value="{{ old('email') }}">
-                <input class="input-text" type="password" name="password" placeholder="Password" value="{{ old('password') }}">
-                <input class="input-text" type="password" name="password_confirmation" placeholder="Confirm Password" value="{{ old('password_confirmation') }}">
-                <input class="input-button" type="submit" value="Sign up">
+                @error('name')
+                    <h3 class="lighter-text margin-1" style="color: #a23526;">{{ $message }}</h3>
+                @enderror
+
+                <input class="input-text margin-top-3" type="email" name="email" placeholder="Email" value="{{ old('email') }}">
+                @error('email')
+                    <h3 class="lighter-text margin-1" style="color: #a23526;">{{ $message }}</h3>
+                @enderror
+
+                <input class="input-text margin-top-3" type="password" name="password" placeholder="Password" value="{{ old('password') }}">
+                @error('password')
+                    <h3 class="lighter-text margin-1" style="color: #a23526;">{{ $message }}</h3>
+                @enderror
+
+                <input class="input-text margin-top-3" type="password" name="password_confirmation" placeholder="Confirm Password" value="{{ old('password_confirmation') }}">
+                @error('password_confirmation')
+                    <h3 class="lighter-text margin-1" style="color: #a23526;">{{ $message }}</h3>
+                @enderror
+
+                <input class="input-button margin-top-3" type="submit" value="Sign up">
             </form>
             <div class="c-line">
                 <h3 class="lighter-text">Already have an account?&nbsp</h3>

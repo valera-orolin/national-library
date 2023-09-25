@@ -63,7 +63,13 @@ class BookController extends Controller
 
         $formFields['is_available'] = $request->has('is_available');
 
+        if ($request->hasFile('cover')) {
+            $formFields['cover'] = $request->file('cover')->store('img', 'public');
+        }
+
         Book::create($formFields);
+
+        flash('Book has been created.');
 
         return redirect('/books');
     }
@@ -101,7 +107,13 @@ class BookController extends Controller
 
         $formFields['is_available'] = $request->has('is_available');
 
+        if ($request->hasFile('cover')) {
+            $formFields['cover'] = $request->file('cover')->store('img', 'public');
+        }
+
         $book->update($formFields);
+
+        flash('Book has been updated.');
 
         return back();
     }
@@ -115,6 +127,7 @@ class BookController extends Controller
     public function destroy(Book $book)
     {
         $book->delete();
+        flash('Book has been deleted.');
         return redirect('/books');
     }
 }
