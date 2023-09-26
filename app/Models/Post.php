@@ -42,4 +42,14 @@ class Post extends Model
             $query->whereBetween('created_at', [$from, $to]);
         }
     }
+
+    /**
+     * Get the comments for the blog post.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 }

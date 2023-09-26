@@ -6,7 +6,7 @@
     <div class="container">
         <div class="sb-line">
             <h1>Reading Spotlight</h1>
-            <a href="/books"><h2>SEE ALL BOOKS</h2></a>
+            <a class="link-animation" href="/books"><h2>SEE ALL BOOKS</h2></a>
         </div>
         <div class="sb-line-top margin-top-3">
             @foreach ($books as $book)
@@ -30,7 +30,7 @@
     <div class="container">
         <div class="sb-line">
             <h1>What's On</h1>
-            <a href="/events"><h2>SEE ALL EVENTS</h2></a>
+            <a class="link-animation link-animation-white" href="/events"><h2>SEE ALL EVENTS</h2></a>
         </div>
         <div class="sb-line-top">
             <div class="event-card margin-top-3">
@@ -39,8 +39,8 @@
                 </div>
                 <a href="/events/{{ $events[0]->id }}"><h2 class="lighter-text small-margin">{{ $events[0]->title }}</h2></a>
                 <div class="sb-line-left small-margin">
-                    <h3 class="date-or-place lighter-text">{{ date_format($events[0]->date, 'd M Y H:i') }}</h3>
-                    <h3 class="date-or-place lighter-text">{{ $events[0]->place }}</h3>
+                    <h3 class="date-or-place lighter-text small-margin">{{ date_format($events[0]->date, 'd M Y H:i') }}</h3>
+                    <h3 class="date-or-place lighter-text small-margin">{{ $events[0]->place }}</h3>
                 </div>
                 <p class="small-margin trim-text">{{ $events[0]->description }}</p>
             </div>
@@ -50,8 +50,8 @@
                     <div class="small-event-card margin-top-3">
                         <a href="/events/{{ $events[$i]->id }}"><h2 class="lighter-text small-margin">{{ $events[$i]->title }}</h2></a>
                         <div class="sb-line-left small-margin">
-                            <h3 class="date-or-place lighter-text">{{ date_format($events[$i]->date, 'd M Y H:i') }}</h3>
-                            <h3 class="date-or-place lighter-text">{{ $events[$i]->place }}</h3>
+                            <h3 class="date-or-place lighter-text small-margin">{{ date_format($events[$i]->date, 'd M Y H:i') }}</h3>
+                            <h3 class="date-or-place lighter-text small-margin">{{ $events[$i]->place }}</h3>
                         </div>
                     </div>
                     @if ($i != count($events) - 1)
@@ -67,18 +67,20 @@
     <div class="container">
         <div class="sb-line">
             <h1>From the Blog</h1>
-            <a href="/posts"><h2>SEE ALL POSTS</h2></a>
+            <a class="link-animation" href="/posts"><h2>SEE ALL POSTS</h2></a>
         </div>
 
-        <div class="sb-line-top">
+        <div class="sb-line-top margin-top-3">
             @foreach ($posts as $post)
                 <div class="post-card">
                     <div class="post-card-img">
                         <img src="{{ $post->image ? asset('storage/' . $post->image) : asset('img/no-image.jpg') }}" alt="">
                     </div>
-                    <h3 class="lighter-text small-margin">{{ $post->categories }}</h3>
                     <a href="/posts/{{ $post->id }}"><h2 class="lighter-text small-margin">{{ $post->title }}</h2></a>
-                    <h3 class="lighter-text small-margin"></h3>
+                    <div class="sb-line-left small-margin">
+                        <h3 class="lighter-text small-margin">{{ $post->categories }}</h3>
+                        <h3 class="lighter-text small-margin">{{ date_format($post->created_at, 'd F Y') }}</h3>
+                    </div>
                     <p class="small-margin trim-text">{{ $post->text }}</p>
                 </div>
             @endforeach

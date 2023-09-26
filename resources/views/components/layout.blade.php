@@ -17,10 +17,10 @@
             <a href="/"><h2>NATIONAL LIBRARY<br>OF BELARUS</h2></a>
         </div>
         <nav class="nav-links nav-links-line">
-            <a href="about.html"><h2>About</h2></a>
-            <a href="/books"><h2>Books</h2></a>
-            <a href="/events"><h2>Events</h2></a>
-            <a href="/posts"><h2>Blog</h2></a>
+            <a class="link-animation" href="about.html"><h2>About</h2></a>
+            <a class="link-animation" href="/books"><h2>Books</h2></a>
+            <a class="link-animation" href="/events"><h2>Events</h2></a>
+            <a class="link-animation" href="/posts"><h2>Blog</h2></a>
         </nav>
         <div class="login">
             @auth
@@ -63,9 +63,9 @@
             <div class="sb-line margin-top-3">
                 <h2 class="author">Developed by Valeryia Matveyeva in 2023</h2>
                 <div class="sb-line icons">
-                    <a href=""><i class="fas fa-envelope"></i></a>
-                    <a href=""><i class="fab fa-github"></i></a>
-                    <a href=""><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:matveyeva.valeryia@gmail.com"><i class="fas fa-envelope"></i></a>
+                    <a href="https://github.com/valera-orolin"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/valeryia-matveyeva-765036293/"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
         </div>

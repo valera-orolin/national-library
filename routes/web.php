@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\HomepageController;
 use Illuminate\Support\Facades\Route;
@@ -123,6 +124,16 @@ Route::post('/posts', [PostController::class, 'store'])->middleware('admin');
  * Show the form for editing the specified post.
  */
 Route::get('/posts/{post}/edit', [PostController::class, 'edit'])->middleware('admin');
+
+/**
+ * Store a newly created comment in storage.
+ */
+Route::post('/posts/{post}/comments', [CommentController::class, 'store'])->middleware('auth');
+
+/**
+ * Remove the specified comment from storage.
+ */
+Route::delete('/posts/{comment}/comments', [CommentController::class, 'destroy'])->middleware('admin');
 
 /**
  * Update the specified post in storage.

@@ -8,6 +8,7 @@ use App\Models\Post;
 use App\Models\Role;
 use App\Models\User;
 use App\Models\Event;
+use App\Models\Comment;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
@@ -18,18 +19,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        Book::factory(20)->create();
 
-        Event::factory(10)->create();
+        $this->call(RoleSeeder::class);
+        $this->call(UserSeeder::class);
 
-        Post::factory(10)->create();
+        $this->call(BookSeeder::class);
+        $this->call(EventSeeder::class);
+        $this->call(PostSeeder::class);
 
-        $adminRole = Role::firstOrCreate(['name' => 'admin']);
-        $admin = User::create([
-            'name' => 'Admin',
-            'email' => 'admin@example.com',
-            'password' => Hash::make('password'),
-        ]);
-        $admin->roles()->attach($adminRole);
+        $this->call(CommentSeeder::class);
     }
 }
