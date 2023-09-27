@@ -23,7 +23,7 @@
                     <form method="POST" action="/posts/{{ $comment->id }}/comments">
                         @csrf
                         @method('DELETE')
-                        <input class="button-link2 white-link" type="submit" value="Delete">
+                        <input class="button-link2 white-link" onclick="return confirm('Delete {{ $comment->user->name }}\'s comment?')" type="submit" value="Delete">
                     </form>
                 @endif
             </div>

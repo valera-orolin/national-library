@@ -16,25 +16,23 @@
             <a href="/"><img class="logo-img" src="{{ asset('img/logo.png') }}" alt="Логотип"></a>
             <a href="/"><h2>NATIONAL LIBRARY<br>OF BELARUS</h2></a>
         </div>
-        <nav class="nav-links nav-links-line">
+        <div class="nav-links nav-links-line">
             <a class="link-animation" href="about.html"><h2>About</h2></a>
             <a class="link-animation" href="/books"><h2>Books</h2></a>
             <a class="link-animation" href="/events"><h2>Events</h2></a>
             <a class="link-animation" href="/posts"><h2>Blog</h2></a>
-        </nav>
-        <div class="login">
-            @auth
-                <div class="sb-line">
-                    <h2 class="username">{{ auth()->user()->name }}</h2>
-                    <form method="POST" action="/logout">
-                        @csrf
-                        <input class="input-button bolder-text" type="submit" value="Logout">
-                    </form>
-                </div>
-            @else
-                <a href="/login"><h2 class="input-button">Login</h2></a>
-            @endauth
         </div>
+        @auth
+            <div class="sb-line login">
+                <h2 class="username">{{ auth()->user()->name }}</h2>
+                <form method="POST" action="/logout">
+                    @csrf
+                    <input class="input-button bolder-text" type="submit" value="Logout">
+                </form>
+            </div>
+        @else
+            <a href="/login"><h2 class="input-button bolder-text">Login</h2></a>
+        @endauth
     </header>
 
     <div class="container message-container">

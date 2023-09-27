@@ -10,6 +10,10 @@
         height: 20vh;
     }
 
+    .login {
+        margin-top: 1.75vh;
+    }
+
     a {
         text-decoration: none;
         color: inherit;
@@ -597,6 +601,10 @@
 
     p {
         font-size: 2.5vw;
+    }
+
+    .bolder-text {
+        font-weight: bold;
     }
 
     .sb-line {

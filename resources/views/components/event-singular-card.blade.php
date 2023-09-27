@@ -10,7 +10,7 @@
             <form method="POST" action="/events/{{ $event->id }}">
                 @csrf
                 @method('DELETE')
-                <input class="button-link white-link" type="submit" value="Delete">
+                <input class="button-link white-link" onclick="return confirm('Delete {{ $event->title }} event?')" type="submit" value="Delete">
             </form>
         </div>
     @endif

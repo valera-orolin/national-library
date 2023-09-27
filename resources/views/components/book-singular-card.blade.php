@@ -38,7 +38,7 @@
                     <form class="margin-left-3vh" method="POST" action="/books/{{ $book->id }}">
                         @csrf
                         @method('DELETE')
-                        <input class="button-link white-link" type="submit" value="Delete">
+                        <input class="button-link white-link" onclick="return confirm('Delete {{$book->title}} book?')" type="submit" value="Delete">
                     </form>
                 </div>
             @endif
