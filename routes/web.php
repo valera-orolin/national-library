@@ -28,9 +28,14 @@ use App\Http\Controllers\UserController;
 // destroy - delete item
 
 /**
- * Home page
+ * Display the homepage.
  */
 Route::get('/', [HomepageController::class, 'index']);
+
+/**
+ * Serve the banner image with caching headers.
+ */
+Route::get('/banner', [HomepageController::class, 'serveBanner']);
 
 
 /**

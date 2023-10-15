@@ -1,3 +1,3 @@
 <div class="container lib-img">
-    <img src="img/banner.png" alt="">
+    <img src="/banner" alt="">
 </div>
