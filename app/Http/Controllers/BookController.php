@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Book;
 use App\Models\Event;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class BookController extends Controller
 {
@@ -109,6 +110,7 @@ class BookController extends Controller
 
         if ($request->hasFile('cover')) {
             $formFields['cover'] = $request->file('cover')->store('img', 'public');
+            self::destroyCover($book);
         }
 
         $book->update($formFields);
@@ -126,8 +128,21 @@ class BookController extends Controller
      */
     public function destroy(Book $book)
     {
+        self::destroyCover($book);
         $book->delete();
         flash('Book has been deleted.');
         return redirect('/books');
+    }
+
+    /**
+     * Remove the cover of the book from storage.
+     *
+     * @param  Book  $event
+     */
+    private static function destroyCover(Book $book) 
+    {
+        if ($book->cover) {
+            Storage::disk('public')->delete($book->cover);
+        }
     }
 }

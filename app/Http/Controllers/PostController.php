@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -23,7 +24,7 @@ class PostController extends Controller
     /**
      * Display the specified post.
      *
-     * @param  \App\Models\Post  $post
+     * @param  Post  $post
      * @return \Illuminate\View\View
      */
     public function show(Post $post) 
@@ -72,7 +73,7 @@ class PostController extends Controller
     /**
      * Show the form for editing the specified post.
      *
-     * @param  \App\Models\Post  $post
+     * @param  Post  $post
      * @return \Illuminate\View\View
      */
     public function edit(Post $post) 
@@ -86,7 +87,7 @@ class PostController extends Controller
      * Update the specified post in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Post  $post
+     * @param  Post  $post
      * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, Post $post) 
@@ -99,6 +100,7 @@ class PostController extends Controller
 
         if ($request->hasFile('image')) {
             $formFields['image'] = $request->file('image')->store('img', 'public');
+            self::destroyImage($post);
         }
 
         $post->update($formFields);
@@ -111,13 +113,26 @@ class PostController extends Controller
     /**
      * Remove the specified post from storage.
      *
-     * @param  \App\Models\Post  $post
+     * @param  Post  $post
      * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(Post $post) 
     {
+        self::destroyImage($post);
         $post->delete();
         flash('Post has been deleted.');
         return redirect('/posts');
+    }
+
+    /**
+     * Remove the image of the post from storage.
+     *
+     * @param  Post  $post
+     */
+    private static function destroyImage(Post $post) 
+    {
+        if ($post->image) {
+            Storage::disk('public')->delete($post->image);
+        }
     }
 }
