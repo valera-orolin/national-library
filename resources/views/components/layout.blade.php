@@ -50,9 +50,11 @@
             <div class="newsletter-line">
                 <div class="sb-line">
                     <h1>Stay up-to-date with our newsletter</h1>
-                    <form class="sb-line" action="">
-                        <input class="input-text" type="text" name="" id="" placeholder="First Name">
-                        <input class="input-text" type="email" name="" id="" placeholder="Email">
+                    <form class="sb-line" method="POST" action="/newsletter">
+                        @csrf
+                        @method('PUT')
+                        <input class="input-text" type="text" name="name" placeholder="First Name">
+                        <input class="input-text" type="email" name="email" placeholder="Email">
                         <input class="input-button" type="submit" value="Submit">
                     </form>
                 </div>

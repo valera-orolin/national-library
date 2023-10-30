@@ -44,6 +44,16 @@ class User extends Authenticatable
     ];
 
     /**
+     * Send an email verification notification.
+     *
+     * @return void
+     */
+    public function sendEmailVerificationNotification()
+    {
+        $this->notify(new \App\Notifications\VerifyEmail);
+    }
+
+    /**
      * Get the roles associated with the user.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany

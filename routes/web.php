@@ -1,12 +1,14 @@
 <?php
 
-use App\Http\Controllers\BookController;
-use App\Http\Controllers\CommentController;
-use App\Http\Controllers\EventController;
-use App\Http\Controllers\HomepageController;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BookController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\EventController;
+use App\Http\Controllers\CommentController;
+use App\Http\Controllers\HomepageController;
+use App\Http\Controllers\NewsletterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +38,11 @@ Route::get('/', [HomepageController::class, 'index']);
  * Serve the banner image with caching headers.
  */
 Route::get('/banner', [HomepageController::class, 'serveBanner']);
+
+/**
+ * Subscribe a user to the newsletter.
+ */
+Route::put('/newsletter', [NewsletterController::class, 'subscribe']);
 
 
 /**
@@ -174,9 +181,14 @@ Route::get('/login', [UserController::class, 'login']);
 /**
  * Log the user out of the application.
  */
-Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');;
+Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');
 
 /**
  * Handle ab authentication attempt.
  */
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
+
+/**
+ * Mark the authenticated user's email as verified.
+ */
+Route::get('/email/verify/{id}', [UserController::class, 'verify'])->middleware('signed')->name('verification.verify');

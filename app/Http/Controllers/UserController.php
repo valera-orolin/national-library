@@ -41,9 +41,11 @@ class UserController extends Controller
         $defaultRole = Role::where('name', 'user')->first();
         $user->roles()->attach($defaultRole);
 
+        $user->sendEmailVerificationNotification();
+
         auth()->login($user);
 
-        flash('User has been created and logged in.');
+        flash('User has been created and logged in. Please verify your email.');
 
         return redirect('/');
     }
@@ -99,5 +101,17 @@ class UserController extends Controller
         }
 
         return back();
+    }
+
+    /**
+     * Mark the authenticated user's email as verified.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function verify(Request $request) 
+    {
+        $request->user()->markEmailAsVerified();
+        return redirect('/');
     }
 }
