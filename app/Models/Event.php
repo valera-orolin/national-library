@@ -52,4 +52,14 @@ class Event extends Model
             $query->whereBetween('date', [$from, $to]);
         }
     }
+
+    /**
+     * Get the users associated with the event.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function users()
+    {
+        return $this->belongsToMany(User::class, 'event_user');
+    }
 }

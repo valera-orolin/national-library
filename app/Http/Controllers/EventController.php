@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Event;
+use App\Models\EventUser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -78,8 +79,11 @@ class EventController extends Controller
      */
     public function edit(Event $event) 
     {
+        $attendanceCount = EventUser::where('event_id', $event->id)->count();
+
         return view('events.edit', [
-            'event' => $event
+            'event' => $event,
+            'attendanceCount' => $attendanceCount
         ]);
     }
 

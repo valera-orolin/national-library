@@ -6,6 +6,7 @@ use App\Http\Controllers\BookController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\EventUserController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\NewsletterController;
@@ -100,6 +101,11 @@ Route::post('/events', [EventController::class, 'store'])->middleware('admin');
  * Show the form for editing the specified event.
  */
 Route::get('/events/{event}/edit', [EventController::class, 'edit'])->middleware('admin');
+
+/**
+ * Confirm the attendance of the authenticated user for the specified event.
+ */
+Route::post('/events/{event}/confirm', [EventUserController::class, 'confirmAttendance'])->middleware('auth');
 
 /**
  * Update the specified event in storage.

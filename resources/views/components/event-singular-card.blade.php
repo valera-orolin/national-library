@@ -23,8 +23,9 @@
     <p class="small-margin">{{ $event->description }}</p>
 
     @if (auth()->check() && !auth()->user()->isAdmin())
-        <form action="">
-            <input class="input-button margin-top-3" type="submit" value="I'm coming!">
+        <form action="/events/{{ $event->id }}/confirm" method="POST">
+            @csrf
+            <input class="input-button margin-top-3" type="submit" value="I'll be there!">
         </form>
     @endif
 </div>

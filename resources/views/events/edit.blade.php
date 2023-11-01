@@ -28,7 +28,7 @@
                 <h3 class="lighter-text margin-top-3">Image:</h3>
                 <input class="input-button" type="file" name="image">
     
-                <h2 class="lighter-text margin-top-3">42 users are coming</h2>
+                <h2 class="lighter-text margin-top-3">{{ $attendanceCount }} users confirmed their attendance</h2>
                 <textarea class="text-edit" name="description" id="" cols="30" rows="10">{{ $event->description }}</textarea>
                 @error('description')
                     <h3 class="lighter-text margin-1" style="color: #a23526;">{{ $message }}</h3>
