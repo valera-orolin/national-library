@@ -17,8 +17,15 @@ class BookController extends Controller
      */
     public function index(Request $request)
     {
+        $books = Book::latest()->filter($request->all())->paginate(15);
+    
+        foreach ($books as $book) {
+            $book->averageRating = $book->userRatings()->avg('rating');
+            $book->ratingCount = $book->userRatings()->count();
+        }
+
         return view('books.index', [
-            'books' => Book::latest()->filter($request->all())->paginate(15)
+            'books' => $books
         ]);
     }
 
@@ -30,8 +37,11 @@ class BookController extends Controller
      */
     public function show(Book $book)
     {
+        $book->averageRating = $book->userRatings()->avg('rating');
+        $book->ratingCount = $book->userRatings()->count();
+
         return view('books.show', [
-            'book' => $book
+            'book' => $book,
         ]);
     }
 
@@ -83,8 +93,11 @@ class BookController extends Controller
      */
     public function edit(Book $book)
     {
+        $book->averageRating = $book->userRatings()->avg('rating');
+        $book->ratingCount = $book->userRatings()->count();
+
         return view('books.edit', [
-            'book' => $book
+            'book' => $book,
         ]);
     }
 

@@ -92,4 +92,14 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Event::class, 'event_user');
     }
+
+    /**
+     * Get the ratings that the book has.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function bookRatings()
+    {
+        return $this->hasMany(BookRating::class);
+    }
 }

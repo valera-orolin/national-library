@@ -8,10 +8,11 @@
             <h2 class="lighter-text">{{ $book->authors }}</h2>
             <h2 class="lighter-text">{{ $book->genres }}</h2>
             <h2 class="lighter-text">First published on {{ date_format($book->release_date, 'F d, Y') }}</h2>
-            <h2 class="rating-text lighter-text">5 (86)</h2>
+            <h2 class="rating-text lighter-text">{{ round($book->averageRating, 1) }} ({{ $book->ratingCount }})</h2>
             
             @if (auth()->check() && !auth()->user()->isAdmin())
-                <form class="rating-form">
+                <form class="rating-form" action="/books/{{ $book->id }}/ratings" method="POST">
+                    @csrf
                     <input type="radio" id="star1" name="rating" value="1">
                     <label for="star1"><i class="fas fa-star"></i></label>
                     <input type="radio" id="star2" name="rating" value="2">

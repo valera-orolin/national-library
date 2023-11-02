@@ -60,4 +60,14 @@ class Book extends Model
             $query->whereBetween('release_date', [$from, $to]);
         }
     }
+
+    /**
+     * Get the ratings that the book has.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function userRatings()
+    {
+        return $this->hasMany(BookRating::class);
+    }
 }

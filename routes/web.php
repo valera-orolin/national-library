@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\BookRatingController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\EventController;
@@ -65,6 +66,11 @@ Route::post('/books', [BookController::class, 'store'])->middleware('admin');
  * Show the form for editing the specified book.
  */
 Route::get('/books/{book}/edit', [BookController::class, 'edit'])->middleware('admin');
+
+/**
+ * Store a newly created or updated book rating in storage.
+ */
+Route::post('/books/{book}/ratings', [BookRatingController::class, 'store'])->middleware('auth');
 
 /**
  * Update the specified book in storage.

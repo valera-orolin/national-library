@@ -33,7 +33,7 @@
                     <h3 class="lighter-text margin-top-3">Image:</h3>
                     <input class="input-button" type="file" name="cover">
     
-                    <h2 class="rating-text lighter-text margin-top-3">5 (86)</h2>
+                    <h2 class="rating-text lighter-text margin-top-3">{{ round($book->averageRating, 1) }} ({{ $book->ratingCount }})</h2>
     
                     <div class="edit-delete-line">
                         <input type="hidden" name="is_available" value="0">
