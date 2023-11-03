@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('authors');
             $table->string('genres');
             $table->boolean('is_available');
-            $table->timestamp('release_date');
+            $table->date('release_date');
             $table->string('cover')->nullable();
             $table->longText('description');
             $table->timestamps();

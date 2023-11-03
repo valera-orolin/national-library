@@ -18,7 +18,7 @@ class HomepageController extends Controller
     public function index() 
     {
         return view('index',[
-            'books' => Book::latest()->take(4)->get(),
+            'books' => Book::withCount('userRatings')->orderBy('user_ratings_count', 'desc')->take(4)->get(),
             'events' => Event::latest()->take(5)->get(),
             'posts' => Post::latest()->take(2)->get(),
         ]);
@@ -37,5 +37,15 @@ class HomepageController extends Controller
         $response->header('Content-Type', 'image/png');
         $response->header('Cache-Control', 'public, max-age=31536000, s-maxage=31536000');
         return $response;
+    }
+
+    /**
+     * Display the about page.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function about()
+    {
+        return view('about.index');
     }
 }

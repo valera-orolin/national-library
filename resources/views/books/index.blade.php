@@ -15,9 +15,9 @@
             </div>
             <div class="c-line">
                 <h2 class="lighter-text">Sort by</h2>
-                <select class="input-text">
-                    <option value="value1">Popularity</option>
-                    <option value="value2">Rating</option>
+                <select class="input-text" name="sort_by">
+                    <option value="popularity">Popularity</option>
+                    <option value="rating">Rating</option>
                 </select>
             </div>
             <input class="input-button" type="submit" value="Search">

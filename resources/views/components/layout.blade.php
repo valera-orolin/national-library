@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
-<script src="//code.jquery.com/jquery.js"></script>
+    <script src="//code.jquery.com/jquery.js"></script>
     <title>Library</title>
 </head>
 <body>
@@ -17,7 +17,7 @@
             <a href="/"><h2>NATIONAL LIBRARY<br>OF BELARUS</h2></a>
         </div>
         <div class="nav-links nav-links-line">
-            <a class="link-animation" href="about.html"><h2>About</h2></a>
+            <a class="link-animation" href="/about"><h2>About</h2></a>
             <a class="link-animation" href="/books"><h2>Books</h2></a>
             <a class="link-animation" href="/events"><h2>Events</h2></a>
             <a class="link-animation" href="/posts"><h2>Blog</h2></a>

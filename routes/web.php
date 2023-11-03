@@ -42,6 +42,11 @@ Route::get('/', [HomepageController::class, 'index']);
 Route::get('/banner', [HomepageController::class, 'serveBanner']);
 
 /**
+ * Display the about page.
+ */
+Route::get('/about', [HomepageController::class, 'about']);
+
+/**
  * Subscribe a user to the newsletter.
  */
 Route::put('/newsletter', [NewsletterController::class, 'subscribe']);

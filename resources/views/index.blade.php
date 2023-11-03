@@ -34,15 +34,17 @@
         </div>
         <div class="sb-line-top">
             <div class="event-card margin-top-3">
-                <div class="event-card-img">
-                    <img src="{{ $events[0]->image ? asset('storage/' . $events[0]->image) : asset('img/no-image.jpg') }}" alt="">
-                </div>
-                <a href="/events/{{ $events[0]->id }}"><h2 class="lighter-text small-margin">{{ $events[0]->title }}</h2></a>
-                <div class="sb-line-left small-margin">
-                    <h3 class="date-or-place lighter-text small-margin">{{ date_format($events[0]->date, 'd M Y H:i') }}</h3>
-                    <h3 class="date-or-place lighter-text small-margin">{{ $events[0]->place }}</h3>
-                </div>
-                <p class="small-margin trim-text">{{ $events[0]->description }}</p>
+                @if (!empty($events) && isset($events[0]))
+                    <div class="event-card-img">
+                        <img src="{{ $events[0]->image ? asset('storage/' . $events[0]->image) : asset('img/no-image.jpg') }}" alt="">
+                    </div>
+                    <a href="/events/{{ $events[0]->id }}"><h2 class="lighter-text small-margin">{{ $events[0]->title }}</h2></a>
+                    <div class="sb-line-left small-margin">
+                        <h3 class="date-or-place lighter-text small-margin">{{ date_format($events[0]->date, 'd M Y H:i') }}</h3>
+                        <h3 class="date-or-place lighter-text small-margin">{{ $events[0]->place }}</h3>
+                    </div>
+                    <p class="small-margin trim-text">{{ $events[0]->description }}</p>
+                @endif
             </div>
 
             <div class="small-event-cards">

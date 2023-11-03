@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Book;
 use App\Models\Event;
+use App\Models\BookRating;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 class BookController extends Controller
@@ -17,7 +19,18 @@ class BookController extends Controller
      */
     public function index(Request $request)
     {
-        $books = Book::latest()->filter($request->all())->paginate(15);
+        if ($request->input('sort_by') == 'popularity') {
+            $books = Book::withCount('userRatings')->orderBy('user_ratings_count', 'desc')
+            ->filter($request->all());
+        } else if ($request->input('sort_by') == 'rating') {
+            $books = Book::withCount(['userRatings as average_rating' => function($query) {
+                $query->select(DB::raw('coalesce(avg(rating),0)'));
+            }])->orderBy('average_rating', 'desc')->filter($request->all());
+        } else {
+            $books = Book::latest()->filter($request->all());
+        }
+    
+        $books = $books->paginate(15);
     
         foreach ($books as $book) {
             $book->averageRating = $book->userRatings()->avg('rating');
@@ -72,7 +85,7 @@ class BookController extends Controller
             'description' => 'required'
         ]);
 
-        $formFields['is_available'] = $request->has('is_available');
+        $formFields['is_available'] = $request->input('is_available') == '1';
 
         if ($request->hasFile('cover')) {
             $formFields['cover'] = $request->file('cover')->store('img', 'public');
@@ -119,7 +132,7 @@ class BookController extends Controller
             'description' => 'required'
         ]);
 
-        $formFields['is_available'] = $request->has('is_available');
+        $formFields['is_available'] = $request->input('is_available') == '1';
 
         if ($request->hasFile('cover')) {
             $formFields['cover'] = $request->file('cover')->store('img', 'public');
