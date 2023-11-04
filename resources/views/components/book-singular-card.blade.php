@@ -45,7 +45,7 @@
             @endif
         </div>
     </div>
-    <p>{{ $book->description }}</p>
+    <p>{!! nl2br(e($book->description)) !!}</p>
 </div>
 
 <script src="/js/rating-form.js"></script>

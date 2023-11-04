@@ -18,7 +18,8 @@ class PostFactory extends Factory
     {
         return [
             'title' => $this->faker->sentence(),
-            'categories' => $this->faker->word(),
+            'categories' => $this->faker->word() . ', ' . $this->faker->word() . ', ' . $this->faker->word(),
+            'image' => 'img/pic' . rand(1, 30) . '.jpg',
             'text' => $this->faker->paragraph(20)
         ];
     }

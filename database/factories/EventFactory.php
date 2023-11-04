@@ -19,7 +19,8 @@ class EventFactory extends Factory
         return [
             'title' => $this->faker->sentence(),
             'date' => $this->faker->dateTime(),
-            'place' => $this->faker->word(),
+            'place' => $this->faker->word() . " " . $this->faker->word() . " " . $this->faker->word(),
+            'image' => 'img/pic' . rand(1, 30) . '.jpg',
             'description' => $this->faker->paragraph(20),
         ];
     }
