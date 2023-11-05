@@ -1,66 +1,57 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# National Library of Belarus website
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+![Alt text](/public/img/screen1.png "National Library of Belarus")
 
-## About Laravel
+## Project Description
+This website is a comprehensive online platform designed to bring the library experience to the digital world. It features three main sections:
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+1. **Book Section**: This section serves as a digital library where users can browse through the available books. Each book entry provides detailed information about the book and allows users to rate them. This interactive feature not only enhances user engagement but also helps in building a community-driven book recommendation system.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+![Alt text](/public/img/screen2.png "Books Section")
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+2. **Events Section**: This section is dedicated to keeping the users informed about the upcoming events. It serves as a bulletin board where all the planned library events are posted. Users can view the details of each event, making it easier for them to participate in library activities. Additionally, users have the option to indicate their intention to attend an event, facilitating better event planning and coordination.
 
-## Learning Laravel
+![Alt text](/public/img/screen3.png "Events Section")
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+3. **Blog Section**: This section features blog posts on various topics. Each blog post allows users to leave comments, fostering a space for discussion and interaction among the users.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+![Alt text](/public/img/screen4.png "Blog Section")
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Technologies Used
 
-## Laravel Sponsors
+- Laravel
+- MySQL
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## Usage
 
-### Premium Partners
+### Database Setup
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+This application is configured to use MySQL as its default database. If you wish to utilize a different database, you can modify the default driver in the config/Database.php file.
 
-## Contributing
+For the application to function with MySQL, ensure that MySQL is installed and a database is set up. Then, input your database credentials (database name, username, and password) into the .env.example file and rename this file to .env.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Migrations
+To create all the nessesary tables and columns, run the following
+```
+php artisan migrate
+```
 
-## Code of Conduct
+### Seeding The Database
+To fill the database with books, as well as dummy events, posts, users and comments, run the following
+```
+php artisan db:seed
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### Running The App
+Upload the files to your document root, Valet folder or run 
+```
+php artisan serve
+```
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+The National Library of Belarus website is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Contact Information
+
+This project is developed by Valeryia Matveyeva. You can contact me at `matveyeva.valeryia@gmail.com`.
