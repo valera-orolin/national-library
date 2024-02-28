@@ -48,10 +48,6 @@ Upload the files to your document root, Valet folder or run
 php artisan serve
 ```
 
-## License
-
-The National Library of Belarus website is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-
 ## Contact Information
 
 This project is developed by Valeryia Matveyeva. You can contact me at `matveyeva.valeryia@gmail.com`.
