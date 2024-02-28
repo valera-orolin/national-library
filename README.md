@@ -20,6 +20,7 @@ This website is a comprehensive online platform designed to bring the library ex
 ## Technologies Used
 
 - Laravel
+- Blade
 - MySQL
 
 ## Usage
